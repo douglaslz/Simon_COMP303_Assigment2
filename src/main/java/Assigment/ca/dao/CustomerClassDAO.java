@@ -36,6 +36,20 @@ public class CustomerClassDAO implements CustomerDAO{
 		return result;
 		
 	}
+	
+	
+
+	@Override
+	@Transactional
+	public void getCustomers(Customer thecustomer) {
+		System.out.println("sesion  " +thecustomer);
+		//Get session
+		Session mysession=sessionFactory.getCurrentSession();
+		System.out.println("sesion2  " +mysession);
+		//insert server
+		mysession.save(thecustomer);
+		
+	}
 
 	
 }

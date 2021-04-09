@@ -12,8 +12,8 @@ import javax.persistence.Id;
 
 
 @Entity
-//@Table(name="customer")
-@Table(schema = "hotel_reservation", name = "customer")
+@Table(name="customer")
+
 public class Customer {
 	
 	
@@ -26,19 +26,19 @@ public Customer() {
 
 @Override
 public String toString() {
-	return "Customer [Id=" + Id + ", email=" + email + ", password=" + password + ", firstname=" + firstname
+	return "Customer [custId=" + custId + ", email=" + email + ", password=" + password + ", firstname=" + firstname
 			+ ", lastname=" + lastname + ", phonenumber=" + phonenumber + ", address=" + address + ", city=" + city
 			+ ", postcode=" + postcode + ", country=" + country + "]";
 }
 
 
 
-public String getId() {
-	return Id;
+public String getcustId() {
+	return custId;
 }
 
-public void setId(String id) {
-	Id = id;
+public void setcustId(String custid) {
+	custId = custid;
 }
 
 public String getEmail() {
@@ -105,11 +105,11 @@ public void setPostcode(String postcode) {
 	this.postcode = postcode;
 }
 
-public String getContry() {
+public String getCountry() {
 	return country;
 }
 
-public void setContry(String country) {
+public void setCountry(String country) {
 	this.country = country;
 }
 
@@ -118,7 +118,7 @@ public void setContry(String country) {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 @Column(name="custId")
-private String Id;
+private String custId;
 
 @Column(name="email")
 private String email;

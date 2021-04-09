@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import Assigment.ca.dao.CustomerDAO;
@@ -35,13 +38,32 @@ public class Controlador {
 	
 	@RequestMapping("/showFormAddCustomer")
 	public String showFormAddCustomer(Model model) {
+
+		//Bind data with customer
 		
+		Customer customer =  new Customer();
+		
+		model.addAttribute("customer",customer);
 		
 
 		return "AddCustomer";
 		
 		
 	}
+	
+	@GetMapping("/InsertCustomer")
+	public String InsertCustomer(@ModelAttribute("customer")Customer thecustomer) {
+
+		//Insert client to the database
+		customerdao.getCustomers(thecustomer);
+		
+		
+		
+		return "redirect:/customer/list";
+		
+		
+	}
+
 	
 	@Autowired
 	public CustomerDAO customerdao;

@@ -7,7 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("customer/list"); %>
 
+<h1>Login</h1>
+<form action="">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  <label for="pwd">Password:</label>
+  <input type="password" id="pwd" name="pwd" ><br><br>
+  <input type="submit">
+</form>
 </body>
 </html>

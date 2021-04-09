@@ -36,8 +36,7 @@ public class ConectCrud extends HttpServlet {
 		
 		
 		
-		System.out.println("llllllllllllllllllllllllllllllllllllllllll");
-		System.out.println("llllllllllllllllllllllllllllllllllllllllll");
+		
 		String jdbcUrl = "jdbc:mysql://localhost:3307/hotel_reservation?useSSL=false&serverTimezone=UTC";    
 	    String username = "root";
 	    String password = "password";
@@ -69,8 +68,7 @@ public class ConectCrud extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		System.out.println("llllllllllllllllllllllllllllllllllllllllll");
-		System.out.println("llllllllllllllllllllllllllllllllllllllllll");
+
 		String jdbcUrl = "jdbc:mysql://localhost:3307/hotel_reservation?useSSL=false&serverTimezone=UTC";    
 	    String username = "root";
 	    String password = "password";
@@ -85,7 +83,6 @@ public class ConectCrud extends HttpServlet {
 	    	Class.forName(driver);
 	    	Connection con = DriverManager.getConnection(jdbcUrl,username,password);
 	    	out.print("Successful conection");
-	    	System.out.println("llllllllllllllllllllllllllllllllllllllllll");
 	    	con.close();
 	    	
 	    } catch (Exception e) {
